@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "update packages"
-dnf upgrade --refresh
+dnf upgrade --refresh -y
 
 echo "installing essentials"
 dnf install which git gh unzip p python3-pip python3-tkinter -y
