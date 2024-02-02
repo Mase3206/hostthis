@@ -1,23 +1,35 @@
 #!/bin/sh
 
-echo "update packages"
-dnf upgrade --refresh -y
+echo ""
+echo ""
 
-echo "installing essentials"
-dnf install which git gh unzip python3-pip python3-tkinter -y
-pip install --upgrade pip
-pip install setuptools numpy pygame
+echo "Setup: update packages..." -n
+dnf upgrade --refresh -y > /dev/null
+echo " done."
 
-echo "symlinking python"
-ln -s /usr/bin/python3 /usr/bin/python
+echo "Setup: installing essentials..." -n
+dnf install which git gh unzip python3-pip python3-tkinter -y > /dev/null
+pip install --upgrade pip > /dev/null
+pip install setuptools numpy pygame > /dev/null
+echo " done."
 
-echo "setting up booksite"
-wget https://introcs.cs.princeton.edu/python/code/dist/introcs-1.0.zip
-unzip introcs-1.0.zip
-cd introcs
-python setup.py install --user
-cd ..
+echo "Setup: symlinking python..." -n
+ln -s /usr/bin/python3 /usr/bin/python > /dev/null
+echo " done."
 
-echo "cleaning up"
-rm -rf introcs*
-rm -rf setup.sh*
+echo "Setup: setting up booksite..." -n
+wget https://introcs.cs.princeton.edu/python/code/dist/introcs-1.0.zip > /dev/null
+unzip introcs-1.0.zip > /dev/null
+cd introcs > /dev/null
+python setup.py install --user > /dev/null
+cd .. > /dev/null
+echo " done."
+
+echo "Setup: cleaning up..."
+rm -rf introcs* > /dev/null
+rm -rf setup.sh* > /dev/null
+echo " done."
+
+echo "Finished scripted setup."
+echo ""
+echo ""
