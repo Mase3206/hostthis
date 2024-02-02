@@ -4,7 +4,7 @@ echo "update packages"
 dnf upgrade --refresh -y
 
 echo "installing essentials"
-dnf install which git gh unzip p python3-pip python3-tkinter -y
+dnf install which git gh unzip python3-pip python3-tkinter -y
 pip install --upgrade pip
 pip install setuptools numpy pygame
 
