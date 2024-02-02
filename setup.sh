@@ -10,12 +10,12 @@ echo " done."
 
 echo -n "Setup: installing essentials..."
 dnf install which git gh unzip python3-pip python3-tkinter -y > /dev/null
-pip install --upgrade pip > /dev/null
-pip install setuptools numpy pygame > /dev/null
+pip install --upgrade pip > /dev/null 2> /dev/null
+pip install setuptools numpy pygame > /dev/null 2> /dev/null
 echo " done."
 
 echo -n "Setup: symlinking python..."
-ln -s /usr/bin/python3 /usr/bin/python > /dev/null
+ln -s /usr/bin/python3 /usr/bin/python > /dev/null 2> /dev/null
 echo " done."
 
 echo -n "Setup: setting up booksite..."
