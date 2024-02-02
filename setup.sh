@@ -7,25 +7,25 @@ echo "Setup: update packages..." -n
 dnf upgrade --refresh -y > /dev/null
 echo " done."
 
-echo "Setup: installing essentials..." -n
+echo -n "Setup: installing essentials..."
 dnf install which git gh unzip python3-pip python3-tkinter -y > /dev/null
 pip install --upgrade pip > /dev/null
 pip install setuptools numpy pygame > /dev/null
 echo " done."
 
-echo "Setup: symlinking python..." -n
+echo -n "Setup: symlinking python..."
 ln -s /usr/bin/python3 /usr/bin/python > /dev/null
 echo " done."
 
-echo "Setup: setting up booksite..." -n
-wget https://introcs.cs.princeton.edu/python/code/dist/introcs-1.0.zip > /dev/null
+echo -n "Setup: setting up booksite..."
+wget https://introcs.cs.princeton.edu/python/code/dist/introcs-1.0.zip 2> /dev/null
 unzip introcs-1.0.zip > /dev/null
-cd introcs > /dev/null
+cd introcs-1.0 > /dev/null
 python setup.py install --user > /dev/null
 cd .. > /dev/null
 echo " done."
 
-echo "Setup: cleaning up..."
+echo -n "Setup: cleaning up..."
 rm -rf introcs* > /dev/null
 rm -rf setup.sh* > /dev/null
 echo " done."
