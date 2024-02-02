@@ -19,5 +19,5 @@ python setup.py install --user
 cd ..
 
 echo "cleaning up"
-rm -rf introcs introcs-1.0.zip
-rm -rf setup.sh
+rm -rf introcs*
+rm -rf setup.sh*
