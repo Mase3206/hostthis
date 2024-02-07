@@ -32,13 +32,13 @@ rm -rf setup.sh* > /dev/null
 echo " done."
 
 echo -n "Setting PS1..."
-cat <<EOF > /root/.bashrc
+<<EOF>> /root/.bashrc cat
 function nonzero_return() {
-	RETVAL=$?
-	[ $RETVAL -ne 0 ] && echo "<$RETVAL> "
+	RETVAL=\$?
+	[ \$RETVAL -ne 0 ] && echo "<\$RETVAL> "
 }
 
-export PS1="\[\e[31m\]\`nonzero_return\`\[\e[m\][\[\e[32m\]\u\[\e[m\] @ \[\e[36m\]\h\[\e[m\] ; \[\e[35m\]\W\[\e[m\]] \\$ 
+export PS1="\[\e[31m\]\`nonzero_return\`\[\e[m\][\[\e[32m\]\u\[\e[m\] @ \[\e[36m\]\h\[\e[m\] ; \[\e[35m\]\W\[\e[m\]] \\$ "
 EOF
 source /root/.bashrc
 echo " done."
