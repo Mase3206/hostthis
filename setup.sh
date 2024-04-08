@@ -22,7 +22,7 @@ echo -n "Setup: setting up booksite..."
 wget https://introcs.cs.princeton.edu/python/code/dist/introcs-1.0.zip 2> /dev/null
 unzip introcs-1.0.zip > /dev/null
 cd introcs-1.0 > /dev/null
-python setup.py install --user > /dev/null 2> /dev/null
+python setup.py install > /dev/null 2> /dev/null
 cd .. > /dev/null
 echo " done."
 
